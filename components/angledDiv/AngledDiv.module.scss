@@ -1,0 +1,60 @@
+@use "/styles/mixins.scss" as *;
+
+.wrapper {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+
+	@include flex(column, center);
+}
+
+.rotateElement {
+	height: 1000vh;
+	width: 1000vw;
+	transform: rotate(-10deg);
+	@include flex();
+}
+
+.angledDiv {
+	$extraBorderPadding: 50rem;
+
+	// @include flex(column
+	// text-align: center;
+	width: 100%;
+
+	padding: 1rem;
+
+	// On hover
+	&:hover {
+		transform: scale(1.05);
+	}
+
+	&:nth-child(even) {
+		background-color: lightblue;
+	}
+
+	&:nth-child(odd) {
+		background-color: blue;
+	}
+
+	// &:not(:first-child):not(:last-child) {
+	// 	height: 10rem;
+	// }
+
+	&:first-child {
+		padding-top: $extraBorderPadding;
+	}
+
+	&:last-child {
+		padding-bottom: $extraBorderPadding;
+	}
+
+	// For the first element and last element, extend them beyond the screen
+	// to fill out whitespace
+	// height: 500rem;
+}
+
+.text {
+	width: 100%;
+	text-align: center;
+}

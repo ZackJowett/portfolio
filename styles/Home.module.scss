@@ -1,0 +1,152 @@
+.main {
+	height: 100%;
+	width: 100%;
+}
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// VARIABLES
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+// -----------------------------------------------------------------------------
+// VARIABLES
+// -> Root
+// -----------------------------------------------------------------------------
+// Colours
+$grey-dark: #333333;
+$grey: #888888;
+$grey-light: #bbbbbb;
+$grey-very-light: #eeeeee;
+
+// Font Sizes
+$h1-font-size: 1.5rem;
+$h2-font-size: 1rem;
+$h3-font-size: 0.75rem;
+
+// -----------------------------------------------------------------------------
+// VARIABLES
+// -> Breakpoints
+// -----------------------------------------------------------------------------
+$phone-breakpoint: 600px;
+$tablet-portrait-breakpoint: 600px;
+$tablet-landscape-breakpoint: 768px;
+$desktop-breakpoint: 992px;
+$desktop-large-breakpoint: 1200px;
+
+// -----------------------------------------------------------------------------
+// VARIABLES
+// -> Responsive Design
+// -----------------------------------------------------------------------------
+// @media (min-width: tablet-portrait-breakpoint) {
+// }
+
+// @media (min-width: $tablet-landscape-breakpoint) {
+// 	:root {
+// 		--h1-font-size: 2rem;
+// 		--h2-font-size: 1.25rem;
+// 		--h3-font-size: 0.8rem;
+// 	}
+// }
+
+// @media (min-width: $desktop-breakpoint) {
+// 	:root {
+// 		--h1-font-size: 2.5rem;
+// 		--h2-font-size: 2rem;
+// 		--h3-font-size: 1rem;
+// 	}
+// }
+
+// @media (min-width: $desktop-large-breakpoint) {
+// 	:root {
+// 		--h1-font-size: 3rem;
+// 		--h2-font-size: 2.5rem;
+// 		--h3-font-size: 1.5rem;
+// 	}
+// }
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// MIXINS
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+// Centering an element
+@mixin center($top: 50%, $left: 50%, $translate: translate(-50%, -50%)) {
+	top: $top;
+	left: $left;
+	transform: $translate;
+}
+
+// Creating a flex element with horizontal & vertical centering
+@mixin flex-center() {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	@content;
+}
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// HEADING & INDEX SCROLLER
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+.splash {
+	height: 100vh;
+	width: 100%;
+	background-color: rgb(117, 221, 255);
+}
+
+.header {
+	height: auto;
+	width: 100%;
+	position: fixed;
+	z-index: 1000;
+	padding: 1rem;
+
+	box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+
+	@include center();
+	@include flex-center();
+}
+
+.brandContainer {
+	position: relative;
+	@include flex-center {
+		align-items: baseline;
+	}
+}
+
+.brandTitle,
+.brandTitlePeriod {
+	position: relative;
+}
+
+.brandTitlePeriod {
+	top: 0;
+}
+
+.sideBounceOnTransition {
+	position: relative;
+}
+
+.placeholder1,
+.placeholder2,
+.placeholder3 {
+	height: 2000px;
+}
+
+.placeholder1 {
+	background-color: var(--grey-light);
+}
+
+.placeholder2 {
+	background-color: var(--grey);
+}
+
+.placeholder3 {
+	background-color: var(--grey-dark);
+}
+
+.currentSection {
+}
