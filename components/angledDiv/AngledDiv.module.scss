@@ -1,5 +1,7 @@
 @use "/styles/mixins.scss" as *;
 
+$zigZagWidth: 8rem;
+
 .wrapper {
 	position: fixed;
 	height: 100%;
@@ -8,15 +10,63 @@
 	@include flex(column, center);
 }
 
+.header {
+	width: 100%;
+
+	padding: calc($zigZagWidth / 4);
+
+	background-color: var(--secondary);
+}
+
+.text {
+	z-index: 1;
+	font-weight: 500;
+	text-align: center;
+}
+
 .rotateElement {
-	height: 1000vh;
-	width: 1000vw;
-	transform: rotate(-10deg);
+	height: 100%;
+	width: 102%; // slightly wider than the screen to hide the overflow
+
+	@include flex();
+}
+
+.overflowWrapper {
+	position: relative;
+	overflow: hidden;
+	width: 1000%;
+	height: 100%;
 	@include flex();
 }
 
 .angledDiv {
+	$rotateAmount: 20deg;
+
 	$extraBorderPadding: 50rem;
+
+	height: $zigZagWidth;
+	position: absolute;
+
+	&.left,
+	&.right {
+		width: 100%;
+		// background-color: white;
+		color: var(--primary);
+		background-color: var(--secondary);
+	}
+
+	&.left {
+		transform: rotate(-$rotateAmount);
+	}
+
+	&.right {
+		transform: rotate($rotateAmount);
+	}
+
+	&:hover {
+		background-color: var(--highlight);
+		cursor: pointer;
+	}
 
 	// @include flex(column
 	// text-align: center;
@@ -24,37 +74,23 @@
 
 	padding: 1rem;
 
-	// On hover
-	&:hover {
-		transform: scale(1.05);
+	// 4th & 5 child
+	&:nth-child(n + 4):nth-child(-n + 5) {
+		background-color: var(--primary);
+		color: white;
 	}
 
-	&:nth-child(even) {
-		background-color: lightblue;
-	}
+	// First and last child
 
-	&:nth-child(odd) {
-		background-color: blue;
-	}
-
-	// &:not(:first-child):not(:last-child) {
-	// 	height: 10rem;
+	// &:first-child {
+	// 	padding-top: $extraBorderPadding;
 	// }
 
-	&:first-child {
-		padding-top: $extraBorderPadding;
-	}
-
-	&:last-child {
-		padding-bottom: $extraBorderPadding;
-	}
+	// &:last-child {
+	// 	padding-bottom: $extraBorderPadding;
+	// }
 
 	// For the first element and last element, extend them beyond the screen
 	// to fill out whitespace
 	// height: 500rem;
-}
-
-.text {
-	width: 100%;
-	text-align: center;
 }
