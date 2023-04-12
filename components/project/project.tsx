@@ -4,34 +4,39 @@ import Skill from "@/components/skill/skill";
 interface Props {
 	title: string;
 	subtitle?: string;
+	titleLink?: string;
+	linkCircles?: any;
 	dateStarted: string;
 	dateCompleted: string;
 	desc: string;
 	// approachUsed: string;
 	// resources: typeof Skill[];
 	challenges: string;
-	link?: string;
 }
 
 export default function Project({
 	title,
 	subtitle,
+	titleLink,
+	linkCircles,
 	dateStarted,
 	dateCompleted,
 	desc,
 	challenges,
-	link = "",
 }: Props) {
 	return (
 		<div>
 			<h3>
-				{link ? (
-					<a href={link} target="_blank">
+				{titleLink ? (
+					<a href={titleLink} target="_blank">
 						{title}
 					</a>
 				) : (
 					<>{title}</>
 				)}
+
+				{/* Link Circles to various platforms (e.g. email, discord) */}
+				<span>{linkCircles}</span>
 			</h3>
 			{subtitle && <h4>{subtitle}</h4>}
 			<h4>

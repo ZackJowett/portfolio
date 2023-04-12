@@ -8,6 +8,7 @@ import Project from "@/components/project/project";
 import Skill from "@/components/skill/skill";
 import Section from "@/components/section/section";
 import NavBar from "@/components/nav/navBar/navBar";
+import { AiFillGithub } from "react-icons/ai";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -72,7 +73,7 @@ export default function Home() {
 				<Section title="Projects">
 					<Project
 						title="The Game"
-						link="https://thegame.cool/"
+						titleLink="https://thegame.cool/"
 						dateStarted="Aug 2022"
 						dateCompleted="present"
 						desc="Redesigning of The Game Wallets' Shopify website, giving it a fresh, modern look while retaining its unique cricket-inspired branding. Built a custom monogramming app using Shopify's Liquid templating language, which allows customers to customize their wallets with their initials."
@@ -81,21 +82,28 @@ export default function Home() {
 					<Project
 						title="Flesh & Blood Card Game Collection Manager"
 						subtitle="University Capstone Project"
-						link=""
+						titleLink=""
 						dateStarted="Aug 2022"
 						dateCompleted="Nov 2022"
 						desc=""
 						// desc="Our group was tasked with building a web application for a client. We followed the Scrum methodology to organize our develpment process into one week sprints with tri-weekly standups. We also maintained an Agile philosphy to adapt our development process as needed to ensure that we were meeting the client's needs and expectations."
 						challenges=""
 					/>
-					{/* <Project
-					title="Portfolio (this site)"
-					link="/"
-					dateStarted="Feb 2023"
-					dateCompleted="present"
-					desc=""
-					challenges="Designing a website that reflects my personality and engineering philosphy while also being easy to navigate and aesthetically pleasing was a challenge."
-				/> */}
+					<Project
+						title="Portfolio (this site)"
+						titleLink="/"
+						linkCircles={
+							<a
+								href="https://github.com/ZackJowett/portfolio"
+								target="_blank">
+								<AiFillGithub />
+							</a>
+						}
+						dateStarted="Feb 2023"
+						dateCompleted="present"
+						desc=""
+						challenges="Designing a website that reflects my personality and engineering philosphy while also being easy to navigate and aesthetically pleasing was a challenge."
+					/>
 				</Section>
 
 				<Section title="Me"></Section>
