@@ -63,6 +63,8 @@ export default function Home() {
 							"Jira",
 							"Trello",
 							"Shopify",
+							"Heroku",
+							"Vercel",
 						]}
 					/>
 				</Section>
