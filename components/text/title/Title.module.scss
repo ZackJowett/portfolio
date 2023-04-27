@@ -9,13 +9,17 @@
 	// flex: 3;
 }
 
+.first {
+	line-height: 6vw;
+}
+
 @include mobile-only() {
 	.first {
 		font-size: 5rem;
 	}
 
 	.last {
-		font-size: 1rem;
+		font-size: 2.5rem;
 	}
 }
 
@@ -30,6 +34,6 @@
 	}
 
 	.last {
-		font-size: 2rem;
+		font-size: 5rem;
 	}
 }
