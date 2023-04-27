@@ -1,0 +1,26 @@
+@use "@/styles/mixins.scss" as *;
+
+.button {
+	@include border(5px);
+
+	padding: 1rem 2rem;
+	font-size: 1rem;
+	font-weight: 600;
+
+	// width: 15vw;
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.primary {
+	background-color: var(--secondary);
+	color: var(--primary);
+}
+
+.secondary {
+	background-color: var(--primary);
+	border-color: var(--secondary);
+	color: var(--secondary);
+}

@@ -1,0 +1,17 @@
+@use "@/styles/mixins.scss" as *;
+
+.nav {
+	@include flex(row, space-between);
+	width: 80%;
+	max-width: 1000px;
+}
+
+@include mobile-only() {
+	.nav {
+		flex-direction: column;
+	}
+
+	.link:not(:last-child) {
+		margin-bottom: 50px;
+	}
+}

@@ -4,3 +4,59 @@
 	justify-content: $justify-content;
 	flex-direction: $direction;
 }
+
+// Centering an element
+@mixin center($top: 50%, $left: 50%, $translate: translate(-50%, -50%)) {
+	top: $top;
+	left: $left;
+	transform: $translate;
+}
+
+// Responsive media queries
+$mobile-breakpoint: 768px;
+$desktop-breakpoint: 992px;
+$desktop-large-breakpoint: 1200px;
+
+@mixin mobile-only() {
+	@media screen and (max-width: $mobile-breakpoint) {
+		@content;
+	}
+}
+
+@mixin desktop-only() {
+	@media screen and (min-width: $mobile-breakpoint) and (max-width: $desktop-breakpoint) {
+		@content;
+	}
+}
+
+@mixin desktop-up() {
+	@media screen and (min-width: $mobile-breakpoint) {
+		@content;
+	}
+}
+
+@mixin desktop-large-up() {
+	@media screen and (min-width: $desktop-breakpoint) {
+		@content;
+	}
+}
+
+// Radius levels
+$globalRadius: 55px;
+
+@mixin border($radius: 10px, $size: 3px) {
+	border: $size solid var(--secondary);
+	border-radius: $radius;
+}
+
+// Shadow / Border
+@mixin shadow() {
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 3px 0px,
+		rgba(27, 31, 35, 0.3) 0px 0px 0px 1px;
+}
+
+@mixin screen($size) {
+	@media screen and (max-width: $size) {
+		@content;
+	}
+}
