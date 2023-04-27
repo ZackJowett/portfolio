@@ -76,16 +76,14 @@ main {
 }
 
 html {
-	height: -webkit-fill-available;
 	height: 100vh;
 }
 
 body {
-	line-height: 1;
-
 	height: 100vh;
+
 	/* mobile viewport bug fix */
-	min-height: -webkit-fill-available;
+	// min-height: -webkit-fill-available;
 }
 
 ol,

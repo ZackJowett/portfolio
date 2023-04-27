@@ -1,46 +1,9 @@
 @use "@/styles/mixins.scss" as *;
 
-@mixin primary() {
-	background-color: var(--secondary);
-	border-color: var(--secondary);
-	color: var(--primary);
-}
+@include mobile-only {
+	.button {
+		width: 35vw;
 
-@mixin secondary() {
-	background-color: var(--primary);
-	border-color: var(--secondary);
-	color: var(--secondary);
-}
-
-.button {
-	@include border(5px);
-
-	padding: 1rem 0;
-	font-size: 1rem;
-	font-weight: 600;
-
-	width: 200px;
-
-	&:hover {
-		cursor: pointer;
-
-		// transform: scale(1.05);
-		// transition: transform 0.3s ease-in-out;
-	}
-}
-
-.primary {
-	@include primary();
-
-	&:hover {
-		@include secondary();
-	}
-}
-
-.secondary {
-	@include secondary();
-
-	&:hover {
-		@include primary();
+		padding: 0.8rem 0;
 	}
 }

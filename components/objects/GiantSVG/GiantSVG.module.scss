@@ -7,17 +7,14 @@ $height: 20vw;
 	width: $width;
 	height: $height;
 
-	@include mobile-only {
-		transform: rotate(90deg);
-	}
-
 	@include desktop-up {
-		width: 150px;
+		width: 16vh;
 		height: 95vh;
-		// transform: rotate(90deg);
 	}
 
 	@include flex();
+
+	// flex: 1;
 }
 
 .svg {
@@ -26,15 +23,21 @@ $height: 20vw;
 
 	@include desktop-up {
 		transform: none;
+
+		&.desktop {
+			display: block;
+		}
+
+		&.mobile {
+			display: none;
+		}
 	}
 }
 
 .rotate180 {
-	@include mobile-only {
-		transform: rotate(-90deg);
-	}
+	transform: rotate(180deg);
+}
 
-	@include desktop-up() {
-		transform: rotate(180deg);
-	}
+.desktop {
+	display: none;
 }

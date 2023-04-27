@@ -2,8 +2,10 @@
 
 .nav {
 	@include flex(row, space-between);
-	width: 80%;
-	max-width: 1000px;
+	width: 95%;
+	max-width: 3000px;
+
+	flex: 2;
 }
 
 .link {
@@ -22,17 +24,23 @@
 			transition: transform 0.05s ease-in-out;
 		}
 	}
+
+	margin: auto 10px;
 }
 
 .icon {
 	position: absolute;
-	left: 50%;
-	bottom: 50%;
-	transform: translateX(-50%);
+
 	width: 125px;
 	height: 125px;
+
+	left: 50%;
+	bottom: 50%;
+
+	transform: translateX(-50%);
 }
 
+// Mobile
 @include mobile-only() {
 	.nav {
 		flex-direction: column;
@@ -40,5 +48,11 @@
 
 	.link:not(:last-child) {
 		margin-bottom: 50px;
+	}
+
+	.icon {
+		width: 50px;
+		height: 50px;
+		bottom: 70%;
 	}
 }

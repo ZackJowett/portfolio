@@ -30,7 +30,7 @@ $desktop-large-breakpoint: 1200px;
 }
 
 @mixin desktop-up() {
-	@media screen and (min-width: $mobile-breakpoint) {
+	@media screen and (min-width: calc($mobile-breakpoint + 1px)) {
 		@content;
 	}
 }
@@ -59,4 +59,17 @@ $globalRadius: 55px;
 	@media screen and (max-width: $size) {
 		@content;
 	}
+}
+
+// Buttons
+@mixin primaryButton() {
+	background-color: var(--secondary);
+	border-color: var(--secondary);
+	color: var(--primary);
+}
+
+@mixin secondaryButton() {
+	background-color: var(--primary);
+	border-color: var(--secondary);
+	color: var(--secondary);
 }

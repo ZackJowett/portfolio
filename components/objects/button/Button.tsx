@@ -13,8 +13,8 @@ export default function Button({
 }: Props) {
 	return (
 		<button
-			className={`${styles.button} ${primary && styles.primary} ${
-				secondary && styles.secondary
+			className={`${styles.button} ${primary && "primary"} ${
+				secondary && "secondary"
 			}`}>
 			{children}
 		</button>
