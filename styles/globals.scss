@@ -4,6 +4,7 @@
 @use "@/styles/mixins.scss" as *;
 @import "@/styles/reset.scss";
 @import url("https://fonts.googleapis.com/css2?family=B612+Mono:wght@400;700&family=Ubuntu+Mono:ital,wght@0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
 
 // -----------------------------------------------------------------------------
 // SCSS VARIABLES
@@ -13,10 +14,10 @@
 	--primary: #1f66ff;
 	--secondary: #fff;
 
-	--background: #1f66ff;
+	--background: var(--primary);
 
-	--heading: #fff;
-	--text: #fff;
+	--heading: var(--secondary);
+	--text: var(--secondary);
 }
 
 #__next {
@@ -33,7 +34,8 @@ body {
 }
 
 body {
-	font-family: "Ubuntu Mono", monospace;
+	min-width: 300px;
+	font-family: "Open Sans", sans-serif;
 }
 
 h1,
@@ -44,19 +46,20 @@ h5,
 h6,
 a,
 label {
+	font-family: "Ubuntu Mono", monospace;
 	color: var(--heading);
 }
 
 h1 {
-	font-size: 3rem;
-}
-
-h2 {
 	font-size: 2.5rem;
 }
 
-h3 {
+h2 {
 	font-size: 2rem;
+}
+
+h3 {
+	font-size: 1.75rem;
 }
 
 h4 {
@@ -73,6 +76,36 @@ h6 {
 
 p {
 	font-size: 1rem;
+}
+
+@include desktop-up {
+	h1 {
+		font-size: 3.5rem;
+	}
+
+	h2 {
+		font-size: 3rem;
+	}
+
+	h3 {
+		font-size: 2rem;
+	}
+
+	h4 {
+		font-size: 1.5rem;
+	}
+
+	h5 {
+		font-size: 1.5rem;
+	}
+
+	h6 {
+		font-size: 1rem;
+	}
+
+	p {
+		font-size: 1rem;
+	}
 }
 
 img {

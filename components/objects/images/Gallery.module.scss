@@ -1,0 +1,53 @@
+@use "@/styles/mixins.scss" as *;
+
+.gallery {
+	@include flex(row, flex-start);
+
+	overflow-x: auto;
+	white-space: nowrap;
+
+	margin: 1rem 0;
+	padding-bottom: 1rem;
+
+	// Mobile Only
+	@include mobile-only {
+		// Margin between images
+		& > :not(:last-child) {
+			margin-right: 0.5rem;
+		}
+	}
+
+	// Desktop Only and up
+	@include desktop-up {
+		flex-direction: column;
+
+		& > :not(:last-child) {
+			margin-bottom: 0.5rem;
+		}
+	}
+
+	// Scroll Bar
+	/* width */
+	&::-webkit-scrollbar {
+		height: 10px;
+		-webkit-appearance: none;
+	}
+
+	/* Track */
+	&::-webkit-scrollbar-track {
+		// box-shadow: inset 0 0 5px #fff;
+		@include border($size: 1px);
+	}
+
+	/* Handle */
+	&::-webkit-scrollbar-thumb {
+		border-color: var(--secondary);
+		@include border($size: 3px);
+		border-radius: 10px;
+	}
+
+	/* Handle on hover */
+	&::-webkit-scrollbar-thumb:hover {
+		background: var(--secondary);
+	}
+}

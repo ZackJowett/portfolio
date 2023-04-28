@@ -1,16 +1,5 @@
 @use "@/styles/mixins.scss" as *;
 
-.wrapper {
-	width: 100%;
-	height: 100%;
-	min-height: 400px;
-
-	text-align: center;
-
-	@include flex(column, space-evenly);
-	flex: 1;
-}
-
 .title {
 	flex: 1;
 	@include flex();
@@ -32,11 +21,6 @@
 }
 
 @include desktop-up() {
-	.wrapper {
-		height: 80%;
-		min-width: 600px;
-	}
-
 	.first {
 		font-size: 10vw;
 	}

@@ -1,56 +1,74 @@
+import Badge from "../objects/badge/Badge";
 import styles from "./project.module.scss";
 import Skill from "@/components/skill/skill";
 
+import Gallery from "../objects/images/Gallery";
+
 interface Props {
 	title: string;
-	subtitle?: string;
+	role: string;
 	titleLink?: string;
-	linkCircles?: any;
-	dateStarted: string;
-	dateCompleted: string;
-	desc: string;
-	// approachUsed: string;
-	// resources: typeof Skill[];
-	challenges: string;
+	projectDuration: string;
+	projectStatus: string;
+	description: string;
 }
 
 export default function Project({
 	title,
-	subtitle,
+	role,
 	titleLink,
-	linkCircles,
-	dateStarted,
-	dateCompleted,
-	desc,
-	challenges,
+	projectDuration,
+	projectStatus,
+	description,
 }: Props) {
 	return (
-		<div>
-			<h3>
-				{titleLink ? (
-					<a href={titleLink} target="_blank">
-						{title}
-					</a>
-				) : (
-					<>{title}</>
-				)}
+		<div className={styles.project}>
+			<div className={styles.projectDetails}>
+				<div className={styles.header}>
+					<h2 className={styles.title}>
+						{titleLink ? (
+							<a href={titleLink} target="_blank">
+								{title}
+							</a>
+						) : (
+							<>{title}</>
+						)}
+					</h2>
+					{role && <h5 className={styles.role}>{role}</h5>}
+					<div className={styles.badges}>
+						<Badge text={projectStatus} />
+						<Badge text={projectDuration} secondary />
+					</div>
+				</div>
 
-				{/* Link Circles to various platforms (e.g. email, discord) */}
-				<span>{linkCircles}</span>
-			</h3>
-			{subtitle && <h4>{subtitle}</h4>}
-			<h4>
-				{dateStarted} -&gt; {dateCompleted}
-			</h4>
+				<div className={styles.description}>
+					<p>{description}</p>
+				</div>
+			</div>
 
-			<p>{desc}</p>
-			{/* <h4>Resources</h4> */}
-			{/* <div>{resources.map(resource => {
-				return <Skill title={resource.title} subtitle={resource.subtitle} items={resource.items}
-			})}</div> */}
-			<h5>Challenges</h5>
-			<p>{challenges}</p>
-			<h5>Screenshots & Links</h5>
+			<Gallery
+				className={styles.gallery}
+				images={[
+					{
+						src: "/static/images/image0.jpg",
+						alt: "Home Page",
+						width: 500,
+						height: 500,
+					},
+					{
+						src: "/static/images/image1.jpg",
+						alt: "Contact Page",
+						width: 500,
+						height: 500,
+					},
+					{
+						src: "/static/images/image1.jpg",
+						alt: "Duplicate Page",
+						width: 500,
+						height: 500,
+					},
+				]}
+			/>
 		</div>
 	);
 }

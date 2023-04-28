@@ -1,0 +1,15 @@
+@use "@/styles/mixins.scss" as *;
+
+.badge {
+	display: inline-block;
+
+	margin: 1rem 0;
+	padding: 0.2rem 1rem;
+
+	@include border(100px);
+	@include primaryButton;
+}
+
+.secondary {
+	@include secondaryButton;
+}

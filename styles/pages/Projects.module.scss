@@ -1,0 +1,64 @@
+@use "@/styles/mixins.scss" as *;
+
+.projects {
+	flex-direction: column;
+
+	@include desktop-up {
+		flex-direction: row;
+	}
+}
+
+.title {
+	flex: 1;
+
+	@include desktop-up {
+		writing-mode: vertical-rl;
+		text-orientation: mixed;
+		transform: rotate(180deg);
+	}
+}
+
+.pageNav {
+	width: 100%;
+
+	@include flex(row, space-between, $flex-wrap: nowrap);
+
+	margin-bottom: 1rem;
+
+	a {
+		width: 30%;
+	}
+
+	button {
+		width: 100%;
+	}
+
+	@include desktop-up {
+		max-width: 700px;
+		// justify-content: flex-start;
+
+		// Seperation padding
+		a:not(:first-child) {
+			margin-left: 1rem;
+		}
+
+		button {
+			padding: 0.5rem;
+		}
+	}
+}
+
+.content {
+	height: 80%;
+	width: 100%;
+	flex: 5;
+
+	@include desktop-up {
+		height: 100%;
+	}
+}
+
+.cont {
+	height: 100%;
+	width: 100%;
+}

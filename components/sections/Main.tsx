@@ -1,16 +1,18 @@
+import Layout from "../layouts/Layout";
+import MainNav from "../nav/MainNav";
 import GiantSVG from "../objects/GiantSVG/GiantSVG";
 import MainBorder from "../objects/border/MainBorder";
-import Title from "../text/title/Title";
-import styles from "./Main.module.scss";
+
+// import styles from "./Main.module.scss";
 import { RiBracesFill } from "react-icons/ri";
 
 export default function Main() {
 	return (
-		<main className={styles.main}>
+		<Layout>
 			<MainBorder />
 			<GiantSVG />
-			<Title />
+			<MainNav />
 			<GiantSVG flip />
-		</main>
+		</Layout>
 	);
 }

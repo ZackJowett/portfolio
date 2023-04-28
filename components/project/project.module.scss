@@ -1,0 +1,51 @@
+@use "@/styles/mixins.scss" as *;
+
+$margin: 0.5rem;
+
+.project {
+	@include flex(column, $align-items: flex-start);
+
+	@include desktop-up {
+		flex-direction: row;
+	}
+}
+
+.projectDetails {
+	flex: 5;
+}
+
+.gallery {
+	flex: 3;
+}
+
+.title {
+	margin-bottom: $margin;
+}
+
+.header {
+	@include flex(column, flex-start);
+	align-items: flex-start;
+
+	// @include desktop-up {
+	// 	flex-direction: column;
+	// }
+}
+
+.role {
+	padding: 0.5rem 0.3rem;
+	@include border;
+	@include primaryButton;
+
+	@include desktop-up {
+		width: fit-content;
+	}
+}
+
+.badges > :not(:first-child) {
+	margin-left: 1rem;
+	flex-wrap: nowrap;
+}
+
+.description {
+	padding-left: 0.2rem;
+}

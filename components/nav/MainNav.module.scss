@@ -1,11 +1,33 @@
 @use "@/styles/mixins.scss" as *;
 
+$iconSize: 12.5vh;
+$iconSizeMax: 150px;
+$iconSizeMin: 65px;
+
+.wrapper {
+	width: 100%;
+	height: 100%;
+	min-height: 400px;
+
+	text-align: center;
+
+	@include flex(column, space-evenly);
+	flex: 1;
+
+	@include desktop-up() {
+		.wrapper {
+			height: 80%;
+			min-width: 600px;
+		}
+	}
+}
+
 .nav {
 	@include flex(row, space-between);
 	width: 95%;
 	max-width: 3000px;
 
-	flex: 2;
+	flex: 1;
 }
 
 .link {
@@ -31,8 +53,12 @@
 .icon {
 	position: absolute;
 
-	width: 125px;
-	height: 125px;
+	width: $iconSize;
+	height: $iconSize;
+	max-width: $iconSizeMax;
+	max-height: $iconSizeMax;
+	min-width: $iconSizeMin;
+	min-height: $iconSizeMin;
 
 	left: 50%;
 	bottom: 50%;
@@ -44,6 +70,7 @@
 @include mobile-only() {
 	.nav {
 		flex-direction: column;
+		flex: 2;
 	}
 
 	.link:not(:last-child) {
