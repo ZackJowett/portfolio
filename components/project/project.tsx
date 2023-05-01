@@ -1,8 +1,10 @@
 import Badge from "../objects/badge/Badge";
 import styles from "./project.module.scss";
-import Skill from "@/components/skill/skill";
+import Skill from "@/components/technologies/technologies";
 
 import Gallery from "../objects/images/Gallery";
+import { ReactNode } from "react";
+import Technologies from "@/components/technologies/technologies";
 
 interface Props {
 	title: string;
@@ -11,6 +13,10 @@ interface Props {
 	projectDuration: string;
 	projectStatus: string;
 	description: string;
+	technologies: {
+		name: string;
+		icon: ReactNode;
+	}[];
 }
 
 export default function Project({
@@ -20,6 +26,7 @@ export default function Project({
 	projectDuration,
 	projectStatus,
 	description,
+	technologies,
 }: Props) {
 	return (
 		<div className={styles.project}>
@@ -43,6 +50,11 @@ export default function Project({
 
 				<div className={styles.description}>
 					<p>{description}</p>
+				</div>
+
+				<div className={styles.technologies}>
+					<h3>Key Technologies</h3>
+					<Technologies items={technologies} />
 				</div>
 			</div>
 

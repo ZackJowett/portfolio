@@ -12,10 +12,15 @@
 	}
 }
 
+$svgSize: 20px;
+
 .icon {
 	margin-right: 0.5rem;
 	svg {
 		display: inline-block;
-		vertical-align: top;
+		vertical-align: bottom;
+
+		height: $svgSize;
+		width: $svgSize;
 	}
 }

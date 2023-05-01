@@ -1,5 +1,5 @@
 import styles from "./skills.module.scss";
-import Skill from "./skill";
+import Skill from "./technologies";
 
 // Icons
 import {

@@ -7,6 +7,9 @@ import Title from "@/components/text/title/Title";
 import styles from "@/styles/pages/Projects.module.scss";
 import Link from "next/link";
 import { useState } from "react";
+import { DiJqueryLogo } from "react-icons/di";
+import { FaShopify } from "react-icons/fa";
+import { SiAdobexd } from "react-icons/si";
 
 export default function Projects() {
 	const [page, setPage] = useState(null);
@@ -33,6 +36,14 @@ export default function Projects() {
 						projectDuration="6 Months"
 						projectStatus="Complete"
 						description="Redesigning of The Game Wallets' Shopify website."
+						technologies={[
+							{ name: "Shopify Liquid", icon: <FaShopify /> },
+							{
+								name: "jQuery",
+								icon: <DiJqueryLogo />,
+							},
+							{ name: "Adobe XD", icon: <SiAdobexd /> },
+						]}
 					/>
 				</PageContent>
 			</PageWrapper>
