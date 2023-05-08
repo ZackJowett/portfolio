@@ -14,8 +14,9 @@ interface Props {
 export default function Gallery({ className, images }: Props) {
 	return (
 		<div className={`${className} ${styles.gallery}`}>
-			{images.map((image: any) => (
+			{images.map((image: any, index) => (
 				<ImageContainer
+					key={index}
 					src={image.src}
 					alt={image.alt}
 					dimensions={{ width: image.width, height: image.height }}

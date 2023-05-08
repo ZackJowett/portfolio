@@ -1,7 +1,4 @@
-import { Head } from "next/document";
-import MainBorder from "../objects/border/MainBorder";
 import styles from "./Layout.module.scss";
-import { Interface } from "readline";
 
 interface Props {
 	children: any;
