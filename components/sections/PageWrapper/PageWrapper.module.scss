@@ -1,9 +1,0 @@
-@use "@/styles/mixins.scss" as *;
-
-.pageContent {
-	@include flex();
-
-	@include desktop-up {
-		align-items: baseline;
-	}
-}

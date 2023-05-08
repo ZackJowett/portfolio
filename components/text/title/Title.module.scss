@@ -1,31 +1,10 @@
 @use "@/styles/mixins.scss" as *;
 
-.title {
-	flex: 1;
+.wrapper {
 	@include flex();
 }
 
-.first {
-	line-height: 6vw;
-}
-
-@include mobile-only() {
-	.first {
-		font-size: 15vw;
-		line-height: 10vw;
-	}
-
-	.last {
-		font-size: 6vw;
-	}
-}
-
-@include desktop-up() {
-	.first {
-		font-size: 10vw;
-	}
-
-	.last {
-		font-size: 5vw;
-	}
+.subtitle {
+	margin-top: 3px;
+	color: var(--subtext);
 }

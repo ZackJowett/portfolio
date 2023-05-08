@@ -3,25 +3,33 @@
 // -----------------------------------------------------------------------------
 @use "@/styles/mixins.scss" as *;
 @import "@/styles/reset.scss";
-@import url("https://fonts.googleapis.com/css2?family=B612+Mono:wght@400;700&family=Ubuntu+Mono:ital,wght@0,700;1,400&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=B612+Mono:wght@400;700&family=Ubuntu+Mono:ital,wght@0,700;1,400&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
 
 // -----------------------------------------------------------------------------
 // SCSS VARIABLES
 // -----------------------------------------------------------------------------
 
 :root {
-	--primary: #1f66ff;
-	--secondary: #fff;
+	--primary: #242424;
+	--secondary: #e0e0e0;
 
 	--background: var(--primary);
 
 	--heading: var(--secondary);
 	--text: var(--secondary);
+	--subtext: #777;
+
+	--red: #ca5555;
+	--orange: #ffc568;
+	--yellow: #fffd68;
+	--green: #6dff68;
+	--blue: #3ea5ce;
+	--darkgrey: #333;
 }
 
 #__next {
-	height: 100vh;
+	background-color: var(--primary);
 }
 
 html,
@@ -30,7 +38,6 @@ body {
 
 	background-color: var(--background);
 	color: var(--text);
-	height: -webkit-fill-available;
 }
 
 body {
@@ -46,36 +53,37 @@ h5,
 h6,
 a,
 label {
-	font-family: "Ubuntu Mono", monospace;
+	// font-family: "Ubuntu Mono", monospace;
 	color: var(--heading);
 }
 
 h1 {
-	font-size: 2.5rem;
-}
-
-h2 {
 	font-size: 2rem;
 }
 
-h3 {
+h2 {
 	font-size: 1.75rem;
 }
 
-h4 {
+h3 {
 	font-size: 1.5rem;
 }
 
-h5 {
+h4 {
 	font-size: 1.25rem;
 }
 
-h6 {
+h5 {
 	font-size: 1rem;
+}
+
+h6 {
+	font-size: 0.8rem;
 }
 
 p {
 	font-size: 1rem;
+	color: var(--text);
 }
 
 @include desktop-up {
@@ -115,37 +123,107 @@ img {
 	object-fit: cover;
 }
 
-// Buttons
-button {
-	@include border(5px);
+// Border Colours
+.border-red {
+	border-color: var(--red) !important;
+}
 
-	padding: 1rem 0;
-	font-size: 1rem;
-	font-weight: 600;
+.border-orange {
+	border-color: var(--orange) !important;
+}
 
-	width: 15vw;
+.border-yellow {
+	border-color: var(--yellow) !important;
+}
 
-	&:hover {
-		cursor: pointer;
-		box-shadow: rgb(0 0 0 / 25%) 0px 0px 5px;
+.border-green {
+	border-color: var(--green) !important;
+}
 
-		// transform: scale(1.05);
-		// transition: transform 0.3s ease-in-out;
+.border-blue {
+	border-color: var(--blue) !important;
+}
+
+.border-default {
+	border-color: var(--secondary) !important;
+}
+
+.border-primary {
+	border-color: var(--primary) !important;
+}
+
+.border-secondary {
+	border-color: var(--secondary) !important;
+}
+
+.border-darkgrey {
+	border-color: var(--darkgrey) !important;
+}
+
+// Background colours
+.background-red {
+	background-color: var(--red) !important;
+}
+
+.background-orange {
+	background-color: var(--orange) !important;
+}
+
+.background-yellow {
+	background-color: var(--yellow) !important;
+}
+
+.background-green {
+	background-color: var(--green) !important;
+}
+
+.background-blue {
+	background-color: var(--blue) !important;
+}
+
+.background-default {
+	background-color: var(--primary) !important;
+}
+
+.background-primary {
+	background-color: var(--primary) !important;
+}
+
+.background-secondary {
+	background-color: var(--secondary) !important;
+}
+
+.background-darkgrey {
+	background-color: var(--darkgrey) !important;
+}
+
+// FORMS
+
+textarea {
+	padding: 0.5rem;
+	border: none;
+	margin: 0;
+	margin-bottom: 10px;
+
+	background-color: var(--primary);
+
+	@include border($radius: 10px, $size: 1px, $color: var(--subtext));
+	color: var(--text);
+
+	&:focus {
+		outline: none;
+		border-color: var(--text);
 	}
 
-	&.primary {
-		@include primaryButton();
+	height: auto;
+	width: 100%;
+	font-family: "Open Sans", sans-serif;
 
-		&:hover {
-			@include secondaryButton();
-		}
-	}
+	resize: none;
+	overflow: hidden;
+	min-height: 50px;
+	// max-height: 1000px;
 
-	&.secondary {
-		@include secondaryButton();
-
-		&:hover {
-			@include primaryButton();
-		}
-	}
+	// preserve line breaks
+	white-space: pre-wrap;
 }

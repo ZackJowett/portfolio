@@ -114,6 +114,10 @@ input {
 	border-radius: 0;
 }
 
+input:focus-visible {
+	outline: none;
+}
+
 strong {
 	font-weight: 600;
 }

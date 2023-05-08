@@ -5,7 +5,7 @@ import { IoMdMail } from "react-icons/io";
 import { BsGearWideConnected, BsQuestionLg } from "react-icons/bs";
 import { MdMailOutline } from "react-icons/md";
 import Link from "next/link";
-import Title from "../text/title/Title";
+import Title from "../text/heading/Heading";
 
 export default function MainNav() {
 	const handleClick = () => {
@@ -17,21 +17,23 @@ export default function MainNav() {
 			<Title />
 			<nav className={styles.nav}>
 				<Link href="/" className={styles.link} onClick={handleClick}>
-					<Button secondary>ABOUT</Button>
-					<BsQuestionLg className={styles.icon} />
+					<Button>ABOUT</Button>
+					{/* <Button icon={<BsQuestionLg />}>ABOUT</Button> */}
 				</Link>
 
 				<Link
 					href="/projects"
 					className={styles.link}
 					onClick={handleClick}>
-					<Button primary>PROJECTS</Button>
-					<BsGearWideConnected className={styles.icon} />
+					<Button>PROJECTS</Button>
+					{/* <Button primary icon={<BsGearWideConnected />}>
+						PROJECTS
+					</Button> */}
 				</Link>
 
 				<Link href="/" className={styles.link} onClick={handleClick}>
-					<Button secondary>CONTACT</Button>
-					<MdMailOutline className={styles.icon} />
+					<Button>PROJECTS</Button>
+					{/* <Button icon={<MdMailOutline />}>PROJECTS</Button> */}
 				</Link>
 			</nav>
 		</div>

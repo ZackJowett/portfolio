@@ -1,0 +1,21 @@
+@use "@/styles/mixins.scss" as *;
+
+.wrapper {
+	@include flex(row, space-between);
+}
+
+.icon {
+	@include flex();
+
+	p {
+		margin-top: 0.5rem;
+		color: var(--subtext);
+	}
+
+	svg {
+		$size: 50px;
+
+		width: $size;
+		height: $size;
+	}
+}

@@ -1,0 +1,59 @@
+@use "@/styles/mixins.scss" as *;
+
+$distance: 40px;
+$paddingLeftRight: 20px;
+$paddingLeftRightDesktop: 60px;
+
+.section {
+	display: inline-block;
+	// flex: 1;
+	width: 100%;
+	min-width: 300px;
+
+	padding: 100px $paddingLeftRight;
+
+	@include desktop-up() {
+		padding: 100px $paddingLeftRightDesktop;
+	}
+
+	background-color: var(--primary);
+	@include border();
+	@include shadow();
+}
+
+// first child (heading) keep as rectangle
+.section:first-child {
+	padding: 10vw $paddingLeftRight;
+
+	@include desktop-up() {
+		padding: 80px $paddingLeftRightDesktop;
+	}
+}
+
+// Translate bordered sections up slightly to merge with the section above
+// Excluding the first bordered section
+.section:not(:first-child) {
+	$padding: 40px;
+
+	padding-top: calc($distance + $padding);
+	padding-bottom: $padding;
+}
+
+// First child
+.section:nth-child(1) {
+	position: relative;
+	z-index: 100;
+}
+
+$n: 7; // number of children
+// Remaining children
+@for $i from 2 through $n {
+	.section:nth-child(#{$i}) {
+		// Set behind parent
+		position: relative;
+		z-index: calc(100 - $i);
+
+		// Translation upwards
+		transform: translateY(calc($distance * $i - $distance) * -1);
+	}
+}

@@ -18,7 +18,8 @@
 	}
 }
 
-.pageNav {
+.pageNav,
+.projectNav {
 	width: 100%;
 
 	@include flex(row, space-between, $flex-wrap: nowrap);
@@ -45,6 +46,13 @@
 		button {
 			padding: 0.5rem;
 		}
+	}
+}
+
+.projectNav {
+	button {
+		font-size: 0.75rem;
+		border-radius: 100px;
 	}
 }
 
