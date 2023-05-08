@@ -1,11 +1,6 @@
 import Layout from "@/components/layouts/Layout";
-import Button from "@/components/objects/button/Button";
-import Project from "@/components/project/project";
-import PageContent from "@/components/sections/BorderedSection/BorderedSection";
-import PageWrapper from "@/components/sections/PageWrapper/PageWrapper";
 import Title from "@/components/text/title/Title";
 import styles from "@/styles/pages/Projects.module.scss";
-import Link from "next/link";
 import { useState } from "react";
 
 export default function Projects() {

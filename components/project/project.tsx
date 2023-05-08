@@ -1,6 +1,5 @@
 import Badge from "../objects/badge/Badge";
 import styles from "./project.module.scss";
-import Skill from "@/components/skill/skill";
 
 import Gallery from "../objects/images/Gallery";
 

@@ -1,4 +1,3 @@
-import MainNav from "@/components/nav/MainNav";
 import styles from "./Heading.module.scss";
 import Link from "next/link";
 

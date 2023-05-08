@@ -1,5 +1,4 @@
 import styles from "./skills.module.scss";
-import Skill from "./skill";
 
 // Icons
 import { DiSass, DiReact, DiJqueryLogo } from "react-icons/di";
