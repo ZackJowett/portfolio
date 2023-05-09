@@ -1,0 +1,43 @@
+@use "@/styles/mixins.scss" as *;
+
+.featuredWrapper {
+	width: 100%;
+	// height: 20rem;
+
+	margin: 40px auto;
+
+	overflow: hidden;
+
+	@include shadow();
+	@include border($color: var(--primary));
+}
+
+.content {
+	padding: 1rem;
+
+	@include flex(row);
+}
+
+.details {
+}
+
+.image {
+	height: 200px;
+	object-position: top;
+}
+
+.subtitle {
+	color: var(--subtext);
+}
+
+.desc {
+	margin-top: 1rem;
+}
+
+.icon {
+	$size: 120px;
+	margin-left: 1rem;
+
+	height: $size;
+	width: $size;
+}

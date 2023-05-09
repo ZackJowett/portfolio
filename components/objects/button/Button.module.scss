@@ -1,9 +1,40 @@
 @use "@/styles/mixins.scss" as *;
 
-@include mobile-only {
-	.button {
-		width: 35vw;
+.link,
+.submit {
+	display: block;
+	width: 100%;
 
-		padding: 0.8rem 0;
+	text-align: center;
+
+	@include border($radius: 100px, $size: 3px);
+
+	color: var(--text);
+
+	&:hover {
+		cursor: pointer;
+		transform: scale(1.01);
+		transition: transform 0.05s ease-in-out;
+
+		@include shadow();
 	}
+
+	&.dark {
+		border-color: var(--primary);
+		// background-color: var(--primary);
+		color: var(--primary);
+	}
+}
+
+.link {
+	padding: 1rem 2rem;
+}
+
+.submit {
+	position: relative;
+	width: 50%;
+	// float: right;
+	padding: 0.5rem 1rem;
+
+	color: var(--primary);
 }

@@ -47,20 +47,20 @@ $desktop-large-breakpoint: 1200px;
 	}
 }
 
+// Shadow / Border
+@mixin shadow($x: 0px, $y: 5px, $blur: 0.5, $spread: 10px) {
+	box-shadow: rgba(0, 0, 0, $blur) $x $y $spread;
+}
+
 // Radius levels
 $globalRadius: 55px;
 
-@mixin border($radius: 10px, $size: 3px) {
-	border: $size solid var(--secondary);
+@mixin border($radius: 20px, $size: 2px, $color: var(--secondary)) {
+	border: $size solid $color;
 	border-radius: $radius;
 }
 
-// Shadow / Border
-@mixin shadow() {
-	box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 3px 0px,
-		rgba(27, 31, 35, 0.3) 0px 0px 0px 1px;
-}
-
+// Custom screen size
 @mixin screen($size) {
 	@media screen and (max-width: $size) {
 		@content;

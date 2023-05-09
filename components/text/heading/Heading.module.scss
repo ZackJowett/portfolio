@@ -1,0 +1,38 @@
+@use "@/styles/mixins.scss" as *;
+
+.title {
+	flex: 1;
+	@include flex();
+}
+
+.first {
+	font-size: 10vw;
+}
+
+.last {
+	// font-size: 4vw;
+	color: var(--subtext);
+	// font-weight: 400;
+}
+
+@include desktop-up() {
+	.first {
+		font-size: 5rem;
+		line-height: 5rem;
+	}
+
+	.last {
+		font-size: 2rem;
+	}
+}
+
+@include screen(300px) {
+	.first {
+		font-size: 2rem;
+		line-height: 2rem;
+	}
+
+	.last {
+		font-size: 0.9rem;
+	}
+}

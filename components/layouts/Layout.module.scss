@@ -8,10 +8,9 @@
 
 	overflow: hidden;
 
-	@include flex(column, space-between);
-
 	@include desktop-up {
-		flex-direction: row;
 		padding: 2rem;
 	}
+
+	@include flex(column, flex-start, center);
 }

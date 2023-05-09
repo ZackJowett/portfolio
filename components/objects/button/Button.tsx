@@ -1,22 +1,32 @@
+import Link from "next/link";
 import styles from "./Button.module.scss";
 
 interface Props {
-	children: any;
-	primary?: boolean;
-	secondary?: boolean;
+	className?: string;
+	title: any;
+	href?: string;
+	dark?: boolean;
 }
 
-export default function Button({
-	children,
-	primary = false,
-	secondary = false,
-}: Props) {
+export default function Button({ className, title, href, dark }: Props) {
 	return (
-		<button
-			className={`${styles.button} ${primary && "primary"} ${
-				secondary && "secondary"
-			}`}>
-			{children}
-		</button>
+		<>
+			{href ? (
+				<Link
+					href={href}
+					className={`${className ? className : ""} ${styles.link} ${
+						dark ? styles.dark : ""
+					}`}>
+					{title}
+				</Link>
+			) : (
+				<button
+					className={`${className ? className : ""} ${
+						styles.submit
+					} ${dark ? styles.dark : ""}`}>
+					{title}
+				</button>
+			)}
+		</>
 	);
 }

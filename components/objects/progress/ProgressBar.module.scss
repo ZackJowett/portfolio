@@ -1,0 +1,48 @@
+@use "@/styles/mixins.scss" as *;
+
+.progressBar,
+.progress {
+	height: 3rem;
+	width: 100%;
+	border-radius: 100px;
+}
+
+.progressBar {
+	position: relative;
+	@include shadow();
+
+	// Add padding between if not last
+	&:not(:last-child) {
+		margin-bottom: 1rem;
+	}
+}
+
+.progress {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	background-color: var(--darkgrey);
+}
+
+.title {
+	position: absolute;
+	top: 50%;
+	left: 1rem;
+	transform: translateY(-50%);
+}
+
+.icon {
+	margin-right: 0.5rem;
+	vertical-align: middle;
+
+	svg {
+		display: inline-block;
+		// vertical-align: middle;
+
+		// For multiple icons, add margin to the right
+		&:not(:first8-child) {
+			margin-left: 0.5rem;
+		}
+	}
+}
