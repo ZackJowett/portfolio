@@ -6,7 +6,7 @@ import styles from "./Main.module.scss";
 import SimplifiedAbout from "../SimplifiedAbout/SimplifiedAbout";
 import Heading from "@/components/text/heading/Heading";
 import FeaturedProject from "@/components/project/featured/FeaturedProject";
-import Skills from "@/components/skill/skills";
+import Skills from "@/components/skills/skills";
 import Contact from "@/components/forms/contact/Contact";
 import Button from "@/components/objects/button/Button";
 import CallToAction from "@/components/sections/CallToAction/CallToAction";
