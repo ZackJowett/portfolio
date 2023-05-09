@@ -1,9 +1,7 @@
 import Badge from "../objects/badge/Badge";
 import styles from "./project.module.scss";
-
 import Gallery from "../objects/images/Gallery";
 import { ReactNode } from "react";
-import Technologies from "@/components/technologies/technologies";
 
 interface Props {
 	title: string;
@@ -53,7 +51,7 @@ export default function Project({
 
 				<div className={styles.technologies}>
 					<h3>Key Technologies</h3>
-					<Technologies items={technologies} />
+					{/* <Technologies items={technologies} /> */}
 				</div>
 			</div>
 
