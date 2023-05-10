@@ -16,7 +16,7 @@ export default function ImageContainer({
 }: Props) {
 	return (
 		<div className={styles.container}>
-			<div className={styles.description}>{alt}</div>
+			{/* <div className={styles.description}>{alt}</div> */}
 			<Image
 				className={className}
 				src={src}
