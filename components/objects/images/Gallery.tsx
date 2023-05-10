@@ -6,8 +6,6 @@ interface Props {
 	images: {
 		src: string;
 		alt: string;
-		width: number;
-		height: number;
 	}[];
 }
 
@@ -19,7 +17,7 @@ export default function Gallery({ className, images }: Props) {
 					key={index}
 					src={image.src}
 					alt={image.alt}
-					dimensions={{ width: image.width, height: image.height }}
+					dimensions={{ width: 500, height: 200 }}
 				/>
 			))}
 		</div>

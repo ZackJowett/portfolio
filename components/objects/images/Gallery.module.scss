@@ -1,7 +1,7 @@
 @use "@/styles/mixins.scss" as *;
 
 .gallery {
-	@include flex(row, flex-start);
+	@include flex(row, flex-start, flex-start);
 
 	overflow-x: auto;
 	white-space: nowrap;
