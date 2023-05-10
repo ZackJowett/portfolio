@@ -1,72 +1,20 @@
 @use "@/styles/mixins.scss" as *;
 
-.projects {
-	flex-direction: column;
+.details {
+	display: grid;
+	grid-template-columns: 1fr;
 
-	@include desktop-up {
-		flex-direction: row;
+	// Change border colour depending on selected project
+	border-color: var(--primary);
+	transition: all 0.25s ease-in-out;
+
+	&.left {
+		border-color: #2d9113;
 	}
-}
-
-.title {
-	flex: 1;
-
-	@include desktop-up {
-		writing-mode: vertical-rl;
-		text-orientation: mixed;
-		transform: rotate(180deg);
+	&.center {
+		border-color: #871b11;
 	}
-}
-
-.pageNav,
-.projectNav {
-	width: 100%;
-
-	@include flex(row, space-between, $flex-wrap: nowrap);
-
-	margin-bottom: 1rem;
-
-	a {
-		width: 30%;
+	&.right {
+		border-color: #ecbd73;
 	}
-
-	button {
-		width: 100%;
-	}
-
-	@include desktop-up {
-		max-width: 700px;
-		// justify-content: flex-start;
-
-		// Seperation padding
-		a:not(:first-child) {
-			margin-left: 1rem;
-		}
-
-		button {
-			padding: 0.5rem;
-		}
-	}
-}
-
-.projectNav {
-	button {
-		font-size: 0.75rem;
-		border-radius: 100px;
-	}
-}
-
-.content {
-	height: 80%;
-	width: 100%;
-	flex: 5;
-
-	@include desktop-up {
-		height: 100%;
-	}
-}
-
-.cont {
-	height: 100%;
-	width: 100%;
 }
