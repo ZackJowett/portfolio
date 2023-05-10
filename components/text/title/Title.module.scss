@@ -30,3 +30,8 @@ $default: var(--secondary);
 .current {
 	color: $default !important;
 }
+
+.title,
+.subtitle {
+	width: 100%;
+}
