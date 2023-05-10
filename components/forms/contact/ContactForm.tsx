@@ -1,13 +1,11 @@
-import styles from "./Contact.module.scss";
+import styles from "./ContactForm.module.scss";
 import { IoMail, IoPerson } from "react-icons/io5";
 import Button from "@/components/objects/button/Button";
-import Title from "@/components/text/title/Title";
 import Input from "../input/Input";
 
-export default function Contact() {
+export default function ContactForm() {
 	return (
 		<div className={styles.wrapper}>
-			<Title title="Contact" />
 			<form className={styles.form}>
 				<Input
 					name={"name"}
