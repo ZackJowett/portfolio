@@ -7,7 +7,7 @@ import SimplifiedAbout from "../SimplifiedAbout/SimplifiedAbout";
 import Heading from "@/components/text/heading/Heading";
 import FeaturedProject from "@/components/project/featured/FeaturedProject";
 import Skills from "@/components/skills/skills";
-import Contact from "@/components/forms/contact/Contact";
+import Contact from "@/components/sections/Contact/Contact";
 import Button from "@/components/objects/button/Button";
 import CallToAction from "@/components/sections/CallToAction/CallToAction";
 import Socials from "@/components/sections/Socials/Socials";
