@@ -12,7 +12,7 @@ export default function FeaturedProject() {
 			<div className={styles.featuredWrapper}>
 				<Link href="/projects">
 					<Image
-						src="/static/images/the-game-home.png"
+						src="/static/images/the-game/the-game-home.png"
 						width={500}
 						height={150}
 						alt="The Game Website - Home"

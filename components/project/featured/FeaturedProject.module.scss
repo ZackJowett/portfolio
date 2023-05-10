@@ -22,8 +22,16 @@
 }
 
 .image {
-	height: 200px;
+	height: 40vw;
 	object-position: top;
+
+	@include desktop-up {
+		height: 300px;
+	}
+
+	@include screen(400px) {
+		height: 200px;
+	}
 }
 
 .subtitle {
