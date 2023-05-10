@@ -42,7 +42,7 @@ function getSelectedProject(project: string) {
 				tags={["Launched", "2023"]}
 				client="The Game"
 				desc="Reimagined The Game Wallets’ existing website with a modern and mobile-friendly design, and created a custom monogramming app"
-				url="https://thegame.com/"
+				url="https://thegame.cool/"
 				images={[
 					{
 						src: "/static/images/the-game/the-game-home.png",
