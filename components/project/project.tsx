@@ -52,11 +52,10 @@ export default function Project({
 			<div className={styles.images}>
 				{images.map((image) => {
 					return (
-						<SectionWithTitle title={image.alt}>
+						<SectionWithTitle title={image.alt} key={image.src}>
 							<ImageContainer
 								src={image.src}
 								alt={image.alt}
-								key={image.src}
 								dimensions={{
 									width: 500,
 									height: 500,
