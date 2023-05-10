@@ -1,9 +1,6 @@
 @use "@/styles/mixins.scss" as *;
 
 .details {
-	display: grid;
-	grid-template-columns: 1fr;
-
 	// Change border colour depending on selected project
 	border-color: var(--primary);
 	transition: all 0.25s ease-in-out;
