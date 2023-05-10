@@ -2,82 +2,62 @@ import Badge from "../objects/badge/Badge";
 import styles from "./project.module.scss";
 import Gallery from "../objects/images/Gallery";
 import { ReactNode } from "react";
+import Title from "../text/title/Title";
+import Link from "next/link";
+import DataBlock from "../text/data/DataBlock";
+import Button from "../objects/button/Button";
 
 interface Props {
 	title: string;
 	role: string;
-	titleLink?: string;
-	projectDuration: string;
-	projectStatus: string;
-	description: string;
-	technologies: {
-		name: string;
-		icon: ReactNode;
-	}[];
+	url?: string;
+	tags: string[];
+	year: string;
+	client: string;
+	desc: string;
+	images: { src: string; alt: string }[];
+	show: boolean;
 }
 
 export default function Project({
 	title,
 	role,
-	titleLink,
-	projectDuration,
-	projectStatus,
-	description,
-	technologies,
+	url,
+	tags,
+	desc,
+	show,
+	year,
+	images,
+	client,
 }: Props) {
 	return (
-		<div className={styles.project}>
-			<div className={styles.projectDetails}>
-				<div className={styles.header}>
-					<h2 className={styles.title}>
-						{titleLink ? (
-							<a href={titleLink} target="_blank">
-								{title}
-							</a>
-						) : (
-							<>{title}</>
-						)}
-					</h2>
-					{role && <h5 className={styles.role}>{role}</h5>}
-					<div className={styles.badges}>
-						<Badge text={projectStatus} />
-						<Badge text={projectDuration} secondary />
-					</div>
-				</div>
-
-				<div className={styles.description}>
-					<p>{description}</p>
-				</div>
-
-				<div className={styles.technologies}>
-					<h3>Key Technologies</h3>
-					{/* <Technologies items={technologies} /> */}
-				</div>
+		<div className={`${styles.project} ${show ? styles.show : ""}`}>
+			{url ? (
+				<Link href={url} className={styles.projectDetails}>
+					<Title title={title} subtitle={role} align="left" />
+				</Link>
+			) : (
+				<Title title={title} subtitle={role} align="left" />
+			)}
+			<div>
+				{tags.map((tag) => {
+					return <Badge key={tag} text={tag} />;
+				})}
 			</div>
 
-			<Gallery
-				className={styles.gallery}
-				images={[
-					{
-						src: "/static/images/image0.jpg",
-						alt: "Home Page",
-						width: 500,
-						height: 500,
-					},
-					{
-						src: "/static/images/image1.jpg",
-						alt: "Contact Page",
-						width: 500,
-						height: 500,
-					},
-					{
-						src: "/static/images/image1.jpg",
-						alt: "Duplicate Page",
-						width: 500,
-						height: 500,
-					},
-				]}
+			<p className={styles.desc}>{desc}</p>
+
+			{/* <div className={styles.data}>
+				<DataBlock value={year} desc="Year" />
+				<DataBlock value={client} desc="Client" />
+			</div> */}
+			<Button
+				className={styles.link}
+				href="https://www.thegame.cool/"
+				title="Visit"
 			/>
+
+			<Gallery className={styles.gallery} images={images} />
 		</div>
 	);
 }
