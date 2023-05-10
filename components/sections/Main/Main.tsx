@@ -11,33 +11,32 @@ import Contact from "@/components/forms/contact/Contact";
 import Button from "@/components/objects/button/Button";
 import CallToAction from "@/components/sections/CallToAction/CallToAction";
 import Socials from "@/components/sections/Socials/Socials";
+import Flex from "@/components/layouts/flex/Flex";
 
 export default function Main() {
 	return (
 		<Layout>
-			<div className={styles.mainWrapper}>
-				<BorderedSection>
-					<Heading />
-				</BorderedSection>
-				<BorderedSection color="blue">
-					<SimplifiedAbout />
-				</BorderedSection>
-				<BorderedSection background="blue" color="blue">
-					<CallToAction />
-				</BorderedSection>
-				<BorderedSection color="orange">
-					<FeaturedProject />
-				</BorderedSection>
-				<BorderedSection color="red">
-					<Skills />
-				</BorderedSection>
-				<BorderedSection color="green" id="contact">
-					<Contact />
-				</BorderedSection>
-				<BorderedSection>
-					<Socials />
-				</BorderedSection>
-			</div>
+			<BorderedSection>
+				<Heading title="Zack Jowett" subtitle="Full-Stack Developer" />
+			</BorderedSection>
+			<BorderedSection color="blue">
+				<SimplifiedAbout />
+			</BorderedSection>
+			<BorderedSection background="blue" color="blue">
+				<CallToAction />
+			</BorderedSection>
+			<BorderedSection color="orange">
+				<FeaturedProject />
+			</BorderedSection>
+			<BorderedSection color="red">
+				<Skills />
+			</BorderedSection>
+			<BorderedSection color="green" id="contact">
+				<Contact />
+			</BorderedSection>
+			<BorderedSection>
+				<Socials />
+			</BorderedSection>
 		</Layout>
 	);
 }
