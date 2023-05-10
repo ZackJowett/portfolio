@@ -18,29 +18,54 @@ import { FaShopify } from "react-icons/fa";
 import Title from "../text/title/Title";
 import SectionWithTitle from "../sections/SectionWithTitle/SectionWithTitle";
 import ProgressBar from "../objects/progress/ProgressBar";
+import TextButton from "../objects/button/text/TextButton";
+import { useState } from "react";
 
 export default function Skills() {
+	const [showFront, setShowFront] = useState(false);
+	const [showBack, setShowBack] = useState(false);
+	const [showDesign, setShowDesign] = useState(false);
+
 	return (
 		<>
 			<Title title="Skills" subtitle="Learning Progress" />
 			<SectionWithTitle title="Front-End">
-				<ProgressBar title="HTML" percentage={60} icon={<SiHtml5 />} />
+				{showFront && (
+					<ProgressBar
+						title="HTML"
+						percentage={60}
+						icon={<SiHtml5 />}
+					/>
+				)}
 				<ProgressBar
 					title="JavaScript"
 					percentage={95}
 					icon={<SiJavascript />}
 				/>
-				<ProgressBar title="CSS" percentage={60} icon={<SiCss3 />} />
+				{showFront && (
+					<ProgressBar
+						title="CSS"
+						percentage={60}
+						icon={<SiCss3 />}
+					/>
+				)}
 				<ProgressBar title="React" percentage={85} icon={<DiReact />} />
 				<ProgressBar
 					title="Next"
 					percentage={85}
 					icon={<SiNextdotjs />}
 				/>
-				<ProgressBar
-					title="jQuery"
-					percentage={35}
-					icon={<DiJqueryLogo />}
+				{showFront && (
+					<ProgressBar
+						title="jQuery"
+						percentage={35}
+						icon={<DiJqueryLogo />}
+					/>
+				)}
+
+				<TextButton
+					title={showFront ? "Hide" : "Show More"}
+					onClick={() => setShowFront(!showFront)}
 				/>
 			</SectionWithTitle>
 			<SectionWithTitle title="Back-End">
