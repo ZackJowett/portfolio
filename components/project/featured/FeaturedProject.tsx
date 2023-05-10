@@ -10,7 +10,7 @@ export default function FeaturedProject() {
 		<>
 			<Title title="Projects" subtitle="Featured" />
 			<div className={styles.featuredWrapper}>
-				<Link href="/projects/the-game">
+				<Link href="/projects">
 					<Image
 						src="/static/images/the-game-home.png"
 						width={500}
