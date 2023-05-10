@@ -7,7 +7,7 @@
 
 	text-align: center;
 
-	@include border($radius: 100px, $size: 3px);
+	@include border($radius: 100px, $size: 2px);
 
 	color: var(--text);
 
