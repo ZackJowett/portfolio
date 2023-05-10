@@ -3,6 +3,10 @@
 .title {
 	flex: 1;
 	@include flex();
+
+	&.reverse {
+		flex-direction: column-reverse;
+	}
 }
 
 .first {
