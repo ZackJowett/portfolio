@@ -17,7 +17,8 @@
 		height: 200px;
 	}
 
-	@include border;
+	border-radius: 20px;
+	// @include shadow();
 	// Image
 	img {
 		object-fit: cover;
