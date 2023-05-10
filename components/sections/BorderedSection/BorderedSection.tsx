@@ -19,9 +19,11 @@ export default function BorderedSection({
 }: Props) {
 	return (
 		<div
-			className={`${className} ${styles.section} border-${
+			className={`${styles.section} border-${
 				color ? color : "default"
-			} background-${background ? background : "default"}`}
+			} background-${background ? background : "default"} ${
+				className ? className : ""
+			} `}
 			id={id}
 			style={style}>
 			{children}
