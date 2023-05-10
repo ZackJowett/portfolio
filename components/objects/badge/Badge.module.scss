@@ -3,13 +3,18 @@
 .badge {
 	display: inline-block;
 
-	margin: 1rem 0;
-	padding: 0.2rem 1rem;
+	margin-top: 1rem;
+	padding: 0.1rem 0.6rem;
+	background-color: var(--subtext);
 
-	@include border(100px);
-	@include primaryButton;
-}
+	p {
+		color: var(--primary);
+		font-size: 0.8rem;
+	}
 
-.secondary {
-	@include secondaryButton;
+	@include border($color: var(--subtext));
+
+	&:not(:first-child) {
+		margin-left: 0.5rem;
+	}
 }
