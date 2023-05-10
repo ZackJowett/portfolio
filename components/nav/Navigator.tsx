@@ -24,7 +24,7 @@ export default function Navigator({
 						currentProject == "crr" ? styles.selected : ""
 					}`}
 					onClick={() => setProject("crr")}>
-					<h4>Cricket's</h4>
+					<h4>Cricket&apos;s</h4>
 					<h4>Rise</h4>
 					<h4>Ranch</h4>
 				</NavButton>
