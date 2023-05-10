@@ -1,4 +1,5 @@
 import styles from "./Layout.module.scss";
+import Flex from "./flex/Flex";
 
 interface Props {
 	children: any;
@@ -6,5 +7,11 @@ interface Props {
 }
 
 export default function Layout({ children, className }: Props) {
-	return <main className={`${className} ${styles.main}`}>{children}</main>;
+	return (
+		<main className={`${className} ${styles.main}`}>
+			<Flex className={styles.content} direction="column">
+				{children}
+			</Flex>
+		</main>
+	);
 }
