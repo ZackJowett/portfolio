@@ -1,0 +1,95 @@
+@use "@/styles/mixins.scss" as *;
+
+.wrapper {
+	padding: 0 !important;
+	width: 100%;
+	height: 160px;
+
+	z-index: 99;
+	min-width: 300px;
+
+	transform: translateY(-40px);
+
+	@include flex(row);
+}
+
+.navButton {
+	text-align: center;
+
+	flex: 2;
+
+	h4 {
+		width: 100%;
+		padding: 0 1rem;
+		font-size: 3.5vw;
+
+		@include screen(400px) {
+			font-size: 1rem;
+		}
+
+		@include desktop-up {
+			font-size: 1.3rem;
+		}
+	}
+
+	&:hover {
+		cursor: pointer;
+		height: 200px;
+		transform: translateY(10px);
+	}
+	transition: all 0.25s ease-in-out;
+}
+
+// Navigation Highlight Colours
+@mixin highlightNav($color, $textColor: var(--secondary)) {
+	border-color: $color;
+
+	&.selected {
+		background-color: $color;
+		border-color: var(--secondary);
+
+		h4 {
+			text-align: center;
+			color: $textColor;
+		}
+	}
+}
+
+.navButton.left {
+	display: relative;
+	z-index: 1;
+
+	text-align: left;
+	@include highlightNav(#2d9113);
+}
+
+.navButton.center {
+	display: relative;
+	z-index: 1;
+
+	@include highlightNav(#871b11);
+	z-index: 1;
+}
+
+.navButton.right {
+	display: relative;
+	z-index: 1;
+
+	text-align: right;
+	@include highlightNav(#ecbd73, var(--primary));
+
+	// &.selected {
+	//     backgrou
+	// }
+}
+
+// Selected NavButton
+.selected {
+	// transform: scale(1.1);
+	height: 200px !important;
+	transform: translateY(10px);
+	z-index: 99;
+	flex: 3;
+
+	@include shadow();
+}
