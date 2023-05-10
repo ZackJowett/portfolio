@@ -6,13 +6,14 @@ import Title from "../text/title/Title";
 import Link from "next/link";
 import DataBlock from "../text/data/DataBlock";
 import Button from "../objects/button/Button";
+import ImageContainer from "../objects/images/ImageContainer";
+import SectionWithTitle from "../sections/SectionWithTitle/SectionWithTitle";
 
 interface Props {
 	title: string;
 	role: string;
 	url?: string;
 	tags: string[];
-	year: string;
 	client: string;
 	desc: string;
 	images: { src: string; alt: string }[];
@@ -26,7 +27,6 @@ export default function Project({
 	tags,
 	desc,
 	show,
-	year,
 	images,
 	client,
 }: Props) {
@@ -47,17 +47,27 @@ export default function Project({
 
 			<p className={styles.desc}>{desc}</p>
 
-			{/* <div className={styles.data}>
-				<DataBlock value={year} desc="Year" />
-				<DataBlock value={client} desc="Client" />
-			</div> */}
-			<Button
-				className={styles.link}
-				href="https://www.thegame.cool/"
-				title="Visit"
-			/>
+			{url && <Button className={styles.link} href={url} title="Visit" />}
 
-			<Gallery className={styles.gallery} images={images} />
+			<div className={styles.images}>
+				{images.map((image) => {
+					return (
+						<SectionWithTitle title={image.alt}>
+							<ImageContainer
+								src={image.src}
+								alt={image.alt}
+								key={image.src}
+								dimensions={{
+									width: 500,
+									height: 500,
+								}}
+							/>
+						</SectionWithTitle>
+					);
+				})}
+			</div>
+
+			{/* <Gallery className={styles.gallery} images={images} /> */}
 		</div>
 	);
 }
