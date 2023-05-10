@@ -17,7 +17,7 @@ $paddingLeftRightDesktop: 60px;
 	}
 
 	background-color: var(--primary);
-	@include border();
+	// @include border();
 	@include shadow();
 }
 
