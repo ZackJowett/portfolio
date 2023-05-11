@@ -58,7 +58,7 @@ export default function ContactForm() {
 					type={"input"}
 					placeholder={"Name"}
 					// generates name, onChange, onBlur, value props
-					{...formik.getFieldProps("email")}
+					{...formik.getFieldProps("name")}
 				/>
 
 				{/* Error Message */}
