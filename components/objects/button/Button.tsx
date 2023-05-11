@@ -6,9 +6,16 @@ interface Props {
 	title: any;
 	href?: string;
 	dark?: boolean;
+	submit?: boolean;
 }
 
-export default function Button({ className, title, href, dark }: Props) {
+export default function Button({
+	className,
+	title,
+	href,
+	dark,
+	submit,
+}: Props) {
 	return (
 		<>
 			{href ? (
@@ -21,6 +28,7 @@ export default function Button({ className, title, href, dark }: Props) {
 				</Link>
 			) : (
 				<button
+					type={submit ? "submit" : "button"}
 					className={`${className ? className : ""} ${
 						styles.submit
 					} ${dark ? styles.dark : ""}`}>
