@@ -2,7 +2,7 @@ import styles from "./ContactForm.module.scss";
 import Button from "@/components/objects/button/Button";
 import Input from "../input/Input";
 import { FormikErrors, useFormik } from "formik";
-import { FormValues } from "@/components/interfaces/interfaces";
+import { ContactFormValues as FormValues } from "@/components/interfaces/interfaces";
 import { useState } from "react";
 import Spinner from "@/components/objects/loading/Spinner";
 

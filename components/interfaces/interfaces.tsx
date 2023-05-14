@@ -1,5 +1,5 @@
 // Form values for contact form
-export interface FormValues {
+export interface ContactFormValues {
 	name: string;
 	email: string;
 	subject: string;
