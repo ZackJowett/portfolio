@@ -129,7 +129,7 @@ export default function ContactForm() {
 					onChange={formik.handleChange}
 					onBlur={formik.handleBlur}
 					value={formik.values.message}
-					rows={500}
+					rows={5}
 					onInput={(e) => auto_grow(e.target)}
 					className={`${styles.textarea} ${
 						formik.touched.message && formik.errors.message
