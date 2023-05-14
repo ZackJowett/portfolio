@@ -1,8 +1,7 @@
 import styles from "./ContactForm.module.scss";
-import { IoMail, IoPerson } from "react-icons/io5";
 import Button from "@/components/objects/button/Button";
 import Input from "../input/Input";
-import { FormikErrors, FormikValues, useFormik } from "formik";
+import { FormikErrors, useFormik } from "formik";
 import { FormValues } from "@/components/interfaces/interfaces";
 import { useState } from "react";
 import Spinner from "@/components/objects/loading/Spinner";
