@@ -7,13 +7,15 @@ export default function Contact() {
 		<>
 			<div className={styles.details}>
 				<Title title="Contact" />
-				<Title
-					small
-					title="zachary.jowett@gmail.com"
-					subtitle="Email"
-					align="left"
-					reverse
-				/>
+				<a href="mailto:zachary.jowett@gmail.com">
+					<Title
+						small
+						title="zachary.jowett@gmail.com"
+						subtitle="Email"
+						align="left"
+						reverse
+					/>
+				</a>
 				<Title
 					small
 					title="0473370000"
