@@ -171,19 +171,37 @@ export default function ContactForm() {
 
 				{/* ------ Submit ------ */}
 				<div className={styles.submitSection}>
-					{submitButton(showSuccessMessage, isSending)}
+					{submitButton(
+						showSuccessMessage,
+						showFailureMessage,
+						isSending
+					)}
 				</div>
 			</form>
 		</div>
 	);
 }
 
-function submitButton(showSuccess: boolean, isSending: boolean) {
+function submitButton(
+	showSuccess: boolean,
+	showFailure: boolean,
+	isSending: boolean
+) {
 	if (isSending) {
 		return <Button disabled title={<Spinner />} />;
 	} else if (showSuccess) {
 		// return <Button disabled title="Successfully sent" />;
 		return <p>Successfully sent</p>;
+	} else if (showFailure) {
+		return (
+			<>
+				<p className={styles.failedToSendMessage}>
+					Message failed to send. Please try again or{" "}
+					<a href="mailto:zachary.jowett@gmail.com">email me</a>.
+				</p>
+				<Button submit title="Send Again" />
+			</>
+		);
 	} else {
 		return <Button submit title="Send" />;
 	}

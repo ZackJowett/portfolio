@@ -17,3 +17,13 @@
 	font-size: 0.8rem;
 	color: var(--red);
 }
+
+.failedToSendMessage {
+	margin-bottom: 1rem;
+	color: var(--red);
+
+	a {
+		color: var(--red);
+		text-decoration: underline;
+	}
+}
