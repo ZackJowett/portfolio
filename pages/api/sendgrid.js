@@ -1,14 +1,8 @@
 import sendgrid from "@sendgrid/mail";
-import { NextApiRequest, NextApiResponse } from "next";
 
-let API_KEY = process.env.SENDGRID_API_KEY;
-if (API_KEY) {
-	sendgrid.setApiKey(API_KEY);
-} else {
-	console.log("SENDGRID_API_KEY not found");
-}
+sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 
-async function sendEmail(req: any, res: any) {
+async function sendEmail(req, res) {
 	try {
 		await sendgrid.send({
 			to: "zachary.jowett@gmail.com", // Your email where you'll receive emails
@@ -43,7 +37,7 @@ async function sendEmail(req: any, res: any) {
       </body>
       </html>`,
 		});
-	} catch (error: any) {
+	} catch (error) {
 		console.log(error);
 		return res
 			.status(error.statusCode || 500)
