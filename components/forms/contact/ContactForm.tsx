@@ -3,13 +3,9 @@ import { IoMail, IoPerson } from "react-icons/io5";
 import Button from "@/components/objects/button/Button";
 import Input from "../input/Input";
 import { FormikErrors, FormikValues, useFormik } from "formik";
-
-interface FormValues {
-	name: string;
-	email: string;
-	subject: string;
-	message: string;
-}
+import { FormValues } from "@/components/interfaces/interfaces";
+import { useState } from "react";
+import Spinner from "@/components/objects/loading/Spinner";
 
 // Validation function for the form
 // Later: Use 'Yup' for validation
@@ -47,6 +43,10 @@ const validate = (values: FormValues) => {
 };
 
 export default function ContactForm() {
+	const [isSending, setIsSending] = useState(false);
+	const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+	const [showFailureMessage, setShowFailureMessage] = useState(false);
+
 	// Use Formik form generator/handler library
 	const formik = useFormik({
 		initialValues: {
@@ -56,9 +56,34 @@ export default function ContactForm() {
 			message: "",
 		},
 		validate,
-		onSubmit: (values: FormValues) => {
+		onSubmit: async (values: FormValues) => {
 			// Called when form is submitted
-			alert(JSON.stringify(values, null, 2));
+			setIsSending(true);
+
+			const res = await fetch("/api/sendgrid", {
+				body: JSON.stringify({
+					values: values,
+				}),
+				headers: {
+					"Content-Type": "application/json",
+				},
+				method: "POST",
+			});
+
+			const { error } = await res.json();
+			if (error) {
+				console.log(error);
+				setShowSuccessMessage(false);
+				setShowFailureMessage(true);
+				setIsSending(false);
+				return;
+			}
+
+			setShowSuccessMessage(true);
+			setShowFailureMessage(false);
+			setIsSending(false);
+
+			console.log(values);
 		},
 	});
 
@@ -146,10 +171,23 @@ export default function ContactForm() {
 				) : null}
 
 				{/* ------ Submit ------ */}
-				<Button submit title="Send" className={styles.submit} />
+				<div className={styles.submitSection}>
+					{submitButton(showSuccessMessage, isSending)}
+				</div>
 			</form>
 		</div>
 	);
+}
+
+function submitButton(showSuccess: boolean, isSending: boolean) {
+	if (isSending) {
+		return <Button disabled title={<Spinner />} />;
+	} else if (showSuccess) {
+		// return <Button disabled title="Successfully sent" />;
+		return <p>Successfully sent</p>;
+	} else {
+		return <Button submit title="Send" />;
+	}
 }
 
 function auto_grow(element: any) {
