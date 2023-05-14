@@ -3,10 +3,11 @@ import styles from "./Button.module.scss";
 
 interface Props {
 	className?: string;
-	title: any;
+	title: any | React.ReactNode;
 	href?: string;
 	dark?: boolean;
 	submit?: boolean;
+	disabled?: boolean;
 }
 
 export default function Button({
@@ -15,6 +16,7 @@ export default function Button({
 	href,
 	dark,
 	submit,
+	disabled = false,
 }: Props) {
 	return (
 		<>
@@ -23,7 +25,7 @@ export default function Button({
 					href={href}
 					className={`${className ? className : ""} ${styles.link} ${
 						dark ? styles.dark : ""
-					}`}>
+					} ${disabled ? styles.disabled : ""}`}>
 					{title}
 				</Link>
 			) : (
@@ -31,7 +33,10 @@ export default function Button({
 					type={submit ? "submit" : "button"}
 					className={`${className ? className : ""} ${
 						styles.submit
-					} ${dark ? styles.dark : ""}`}>
+					} ${dark ? styles.dark : ""} ${
+						disabled ? styles.disabled : ""
+					}`}
+					disabled={disabled}>
 					{title}
 				</button>
 			)}
