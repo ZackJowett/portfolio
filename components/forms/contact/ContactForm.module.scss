@@ -1,5 +1,19 @@
 @use "@/styles/mixins.scss" as *;
 
 .form {
-	margin-top: 20px;
+	margin-top: 1rem;
+}
+
+.submit {
+	margin-top: 1rem;
+}
+
+.error {
+	border-color: var(--red) !important;
+}
+
+.errorMessage {
+	margin: 5px 0 1rem 5px;
+	font-size: 0.8rem;
+	color: var(--red);
 }
